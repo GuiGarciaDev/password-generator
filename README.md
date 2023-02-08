@@ -18,4 +18,4 @@ Website for generating random password with different types of char, you can inc
 ## Hosting
 
 You can check all of that in the link down below :) <br>
-https://react-movies-36.web.app/
+https://password-generator-6946a.web.app/
