@@ -1,1 +1,10 @@
 /// <reference types="vite/client" />
+
+VITE_FIREBASE_API_KEY = 'AIzaSyBQcHtM8-SxwpDg1J3SdmPOegBPBarBmeI'
+VITE_FIREBASE_AUTH_DOMAIN = 'password-generator-6946a.firebaseapp.com'
+VITE_FIREBASE_PROJECT_ID = 'password-generator-6946a'
+VITE_FIREBASE_STORAGE_BUCKET = 'password-generator-6946a.appspot.com'
+VITE_FIREBASE_MESSAGING_SENDER_ID = '102245947753'
+VITE_FIREBASE_APP_ID = '1:102245947753:web:33b5453a9981fa1eb345f8'
+VITE_FIREBASE_MEASUREMENT_ID = 'G-VP13T20NGW'
+
