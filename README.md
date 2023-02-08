@@ -13,8 +13,7 @@ Website for generating random password with different types of char, you can inc
 * Libraries: 
     * react-icons
     
-![image](https://user-images.githubusercontent.com/121461039/215876784-3c5848fa-b830-4d74-b399-79c28d05e72c.png)
-
+![image](https://user-images.githubusercontent.com/121461039/217629937-c31c438a-c315-4e26-accc-654764417a85.png)
 
 ## Hosting
 
