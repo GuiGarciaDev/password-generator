@@ -11,9 +11,9 @@ export default function InputRange({ value, setValue } : Props) {
         <input className={styles.range} 
             type={'range'} 
             min="0" 
-            max="15" 
+            max="20" 
             step="1" 
-            style={{backgroundSize: (+value - 0) * 100 / (15 - 0) + '% 100%'}}
+            style={{backgroundSize: (+value - 0) * 100 / (20 - 0) + '% 100%'}}
             onChange={(e) => setValue(e.target.value)}
             value={value}
         />
