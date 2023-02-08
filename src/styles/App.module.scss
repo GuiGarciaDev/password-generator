@@ -1,0 +1,108 @@
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 30px;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--app-bg);
+    color: white;
+
+    .password {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 30px;
+        width: 500px;
+        height: 80px;
+        background-color: var(--component-bg);
+        color: var(--text-password-color);
+        font-size: 2rem;
+
+        button {
+            padding: 0;
+            border: 0;
+            background-color: transparent;
+            cursor: pointer;
+
+            svg {
+                color: var(--icons-color);
+            }
+        } 
+    }
+
+    .settings {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        width: 500px;
+        row-gap: 30px;
+        background-color: var(--component-bg);
+
+        .inputRangeHolder {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+
+            .stats {
+                display: flex;
+                justify-content: space-between;
+
+                p {
+                    color: var(--icons-color);
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        .checkboxes {
+            display: flex;
+            flex-direction: column;
+            margin-top: 40px;
+            row-gap: 10px;
+        }
+
+        .strenght {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            background-color: var(--component-sec-bg);
+
+            span {
+                color: var(--title-color);
+            }
+
+            div {
+                display: flex;
+                align-items: center;
+                column-gap: 7px;
+
+                svg {
+                    width: 10px;
+                    height: 20px;
+                }
+            }
+        }
+
+        .submitButton {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 20px;
+            border: 1px solid transparent;
+            padding: 20px 0;
+            background-color: var(--button-submit);
+            font-size: 1rem;
+            cursor: pointer;
+            transition: .3s linear;
+
+            &:hover {
+                border: 1px solid var(--button-submit);
+                background-color: var(--component-bg);
+                color: var(--button-submit);
+            }
+        }
+    }
+}
