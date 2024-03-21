@@ -44,7 +44,7 @@ As tecnologias utilizadas para desenvolver esse projeto são:
 * React js
 * TypeScript
 * Sass/Scss
-* Firebase (host)
+* Vercel (host)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
