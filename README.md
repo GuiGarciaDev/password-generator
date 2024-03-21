@@ -23,7 +23,7 @@
 </details>
 
 ## Deploy
-Para usar o projeto basta acessar o link abaixo em seu navegador.
+Para usar o projeto basta acessar o seguinte link: 
 [https://pollease-eight.vercel.app/](https://password-generator-guigarciadev.vercel.app/)
 
 <!-- ABOUT THE PROJECT -->
