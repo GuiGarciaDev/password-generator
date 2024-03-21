@@ -1,29 +1,34 @@
-import styles from './styles/App.module.scss'
-import { AiOutlineArrowRight } from 'react-icons/ai'
-import { FaRegCopy } from 'react-icons/fa'
-import { useState, useEffect } from 'react';
-import InputRange from './components/input-range/InputRange';
-import CheckBox from './components/checkbox/CheckBox';
-import DifficultBar from './components/difficult-bar/DifficultBar';
-import { UPPERCASE, LOWERCASE, NUMBERS, SYMBOLS } from './chars';
+import styles from "./styles/App.module.scss"
+import { AiOutlineArrowRight } from "react-icons/ai"
+import { FaRegCopy } from "react-icons/fa"
+import { useState, useEffect } from "react"
+import InputRange from "./components/input-range/InputRange"
+import CheckBox from "./components/checkbox/CheckBox"
+import DifficultBar from "./components/difficult-bar/DifficultBar"
+import { UPPERCASE, LOWERCASE, NUMBERS, SYMBOLS } from "./chars"
 
 function App() {
-  const [charLenght, setCharLenght] = useState<string>('6');
-  const [password, setPassword] = useState<string>('P4$5W0rD!');
+  const [charLenght, setCharLenght] = useState<number>(6)
+  const [password, setPassword] = useState<string>("")
 
-  const [uppercase, setUppercase] = useState<boolean>(false);
-  const [lowercase, setLowercase] = useState<boolean>(false);
-  const [numbers, setNumbers] = useState<boolean>(false);
-  const [symbols, setSymbols] = useState<boolean>(false);
+  const [uppercase, setUppercase] = useState<boolean>(false)
+  const [lowercase, setLowercase] = useState<boolean>(false)
+  const [numbers, setNumbers] = useState<boolean>(false)
+  const [symbols, setSymbols] = useState<boolean>(false)
 
-  const [strenght, setStrenght] = useState<Array<boolean>>([uppercase, lowercase, numbers, symbols])
+  const [strenght, setStrenght] = useState<Array<boolean>>([
+    uppercase,
+    lowercase,
+    numbers,
+    symbols,
+  ])
 
   useEffect(() => {
     setStrenght([uppercase, lowercase, numbers, symbols])
   }, [uppercase, lowercase, numbers, symbols])
 
   function handleGenerate() {
-    let chars = ''
+    let chars = ""
 
     if (uppercase) {
       chars += UPPERCASE
@@ -38,15 +43,15 @@ function App() {
       chars += SYMBOLS
     }
 
-    let password = ''
+    let password = ""
 
-    for(let i = 0; i < +charLenght; i++) {
-      let randomNumber = Math.floor(Math.random() * chars.length);
-      password += chars.substring(randomNumber, randomNumber +1);
+    for (let i = 0; i < charLenght; i++) {
+      let randomIndex = Math.floor(Math.random() * chars.length)
+      password += chars[randomIndex]
     }
 
-    if (password.length === 0) {
-      alert('Password too short')
+    if (chars.length === 0) {
+      alert("At least one checkbox should be selected")
     } else {
       setPassword(password)
     }
@@ -58,11 +63,19 @@ function App() {
 
   return (
     <div className={styles.App}>
-      <span>Password Generator</span>
+      <h1>Password Generator</h1>
       <div className={styles.password}>
-        <span>{password}</span>
+        <input
+          className={styles._pass}
+          type="text"
+          name="password"
+          id="password"
+          placeholder="P4$5W0rD!"
+          readOnly
+          value={password}
+        />
         <button onClick={() => copyPassword()}>
-          <FaRegCopy fontSize={30}/>
+          <FaRegCopy fontSize={25} />
         </button>
       </div>
       <div className={styles.settings}>
@@ -71,24 +84,46 @@ function App() {
             <span>Character Lenght</span>
             <p>{charLenght}</p>
           </div>
-          <InputRange value={charLenght} setValue={setCharLenght}/>
+          <InputRange size={charLenght} setSize={setCharLenght} />
         </div>
 
         <div className={styles.checkboxes}>
-          <CheckBox text='Include Uppercase Letters' checked={uppercase} setChecked={setUppercase}/>
-          <CheckBox text='Include Lowercase Letters' checked={lowercase} setChecked={setLowercase}/>
-          <CheckBox text='Include Numbers' checked={numbers} setChecked={setNumbers}/>
-          <CheckBox text='Include Symbols' checked={symbols} setChecked={setSymbols}/>
+          <CheckBox
+            text="Include Uppercase Letters"
+            checked={uppercase}
+            setChecked={setUppercase}
+          />
+          <CheckBox
+            text="Include Lowercase Letters"
+            checked={lowercase}
+            setChecked={setLowercase}
+          />
+          <CheckBox
+            text="Include Numbers"
+            checked={numbers}
+            setChecked={setNumbers}
+          />
+          <CheckBox
+            text="Include Symbols"
+            checked={symbols}
+            setChecked={setSymbols}
+          />
         </div>
 
         <div className={styles.strenght}>
           <span>STRENGTH</span>
-          <DifficultBar charStrenght={strenght.filter(Boolean).length} length={+charLenght}/>
+          <DifficultBar
+            charStrenght={strenght.filter(Boolean).length}
+            length={+charLenght}
+          />
         </div>
 
-        <button className={styles.submitButton} onClick={() => handleGenerate()}>
+        <button
+          className={styles.submitButton}
+          onClick={() => handleGenerate()}
+        >
           GENERATE
-          <AiOutlineArrowRight fontSize={12}/>
+          <AiOutlineArrowRight fontSize={12} />
         </button>
       </div>
     </div>

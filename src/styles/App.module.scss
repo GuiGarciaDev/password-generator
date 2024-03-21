@@ -3,9 +3,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px 0;
     row-gap: 30px;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background-color: var(--app-bg);
     color: white;
 
@@ -15,17 +16,20 @@
         align-items: center;
         padding: 0 30px;
         width: 500px;
-        height: 80px;
+        height: 60px;
         background-color: var(--component-bg);
         color: var(--text-password-color);
         transition: all .3s linear;
 
-        span {
+        ._pass {
+            all: unset;
+            caret-color: transparent;
             width: 100%;
             font-size: 2rem;
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
+            background-color: transparent;
         }
 
         button {
@@ -78,7 +82,7 @@
         flex-direction: column;
         padding: 20px;
         width: 500px;
-        row-gap: 30px;
+        row-gap: 20px;
         background-color: var(--component-bg);
         transition: all .3s linear;
 
@@ -101,7 +105,7 @@
         .checkboxes {
             display: flex;
             flex-direction: column;
-            margin-top: 40px;
+            margin-top: 20px;
             row-gap: 10px;
         }
 
@@ -141,7 +145,7 @@
             align-items: center;
             column-gap: 20px;
             border: 1px solid transparent;
-            padding: 20px 0;
+            padding: 15px 0;
             background-color: var(--button-submit);
             font-size: 1rem;
             cursor: pointer;
